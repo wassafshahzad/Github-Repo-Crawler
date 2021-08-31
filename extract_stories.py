@@ -22,7 +22,7 @@ class Extarctor:
     def _save_to_dict(self,issues):
         for issue in issues:
             self.data[
-                pd.Timestamp(issue.closed_at).quarter -1].append(
+                pd.Timestamp(issue.closed_at).quarter % 4].append(
                     {"Assignee": issue.assignee.login if issue.assignee else "", 
                         "URL": issue.html_url if issue.html_url else "",
                         "Title": issue.title if issue.title else "",
