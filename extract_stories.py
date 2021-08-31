@@ -37,7 +37,7 @@ class ThreadMerger:
     @staticmethod
     def start_worker(name,data):
         try:
-            result = Extarctor({"state":"closed", "creator": name}).issues_by_filter()
+            result = Extarctor({"state":"closed", "assignee": name}).issues_by_filter()
             for i in range(len(result)):
                 data[i].extend(result[i])
         except Exception as e:
